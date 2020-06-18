@@ -1,3 +1,4 @@
-import { config } from './deps.ts'
+import { Endpoint } from './endpoint.ts'
 
-console.log(config())
+const endpoint = new Endpoint()
+console.log(endpoint.abbrv())
