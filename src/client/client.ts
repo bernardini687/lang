@@ -1,13 +1,13 @@
-import { runBaseClientConfig } from "./base_client_config.ts";
+import { runBaseClientConfig } from './base_client_config.ts'
 
-const { baseUrl, baseSearchParams } = runBaseClientConfig();
+const { baseUrl, baseSearchParams } = runBaseClientConfig()
 
 interface Options {
-  paths: string[];
+  paths: string[]
 }
 
 export class Client {
-  baseEndpoints: Record<string, string>;
+  baseEndpoints: Record<string, string>
 
   constructor({ paths }: Options) {
     this.baseEndpoints = paths.reduce(
@@ -15,7 +15,7 @@ export class Client {
         Object.assign(memo, {
           [path]: `${baseUrl}/${path}.php?${baseSearchParams}`,
         }),
-      {},
-    );
+      {}
+    )
   }
 }
