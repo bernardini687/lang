@@ -1,0 +1,5 @@
+scripts:
+  t:
+    cmd: deno test --allow-read --allow-env
+    env:
+      DENO_ENV: test

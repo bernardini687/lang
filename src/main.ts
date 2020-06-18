@@ -1,4 +1,4 @@
-import { Endpoint } from './endpoint.ts'
+import { Client } from "./client/client.ts";
 
-const endpoint = new Endpoint()
-console.log(endpoint.abbrv())
+const client = new Client({ paths: ["poetry", "syno"] });
+console.log(client.baseEndpoints);
