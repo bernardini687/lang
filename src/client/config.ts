@@ -1,4 +1,5 @@
-import { config } from '../deps.ts'
+import { config } from '../dev_deps.ts'
+// TODO: don't let this sneak in the install process!
 
 export function runConfig() {
   const denoEnv = Deno.env.get('DENO_ENV')

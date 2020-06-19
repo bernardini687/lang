@@ -1,4 +1,4 @@
-import { assertEquals } from 'https://deno.land/std/testing/asserts.ts'
+import { assertEquals } from '../dev_deps.ts'
 import { Client } from './client.ts'
 
 Deno.test('build the correct endpoints', () => {
