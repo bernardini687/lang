@@ -1,13 +1,11 @@
 import { assertEquals } from 'https://deno.land/std/testing/asserts.ts'
 import { Client } from './client.ts'
 
-const { test } = Deno
+Deno.test('build the correct endpoints', () => {
+  const userId = 'foo'
+  const tokenId = 'bar'
+  const baseUrl = 'https://www.example.com/baz'
 
-const userId = 'foo'
-const tokenId = 'bar'
-const baseUrl = 'https://www.example.com/baz'
-
-test('build the correct endpoints', () => {
   const client = new Client({ paths: ['foo', 'bar'] })
 
   assertEquals(client.baseEndpoints, {

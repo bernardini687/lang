@@ -1,8 +1,6 @@
 import { runConfig } from './config.ts'
 
-runConfig()
-
-function getOrPanic(key: string) {
+function getEnvOrPanic(key: string) {
   const result = Deno.env.get(key)
 
   if (result) {
@@ -13,14 +11,16 @@ function getOrPanic(key: string) {
 }
 
 export function runBaseClientConfig() {
+  runConfig()
+
   let rawParams: Record<string, string>
   let baseUrl: string
 
   try {
-    const uid = getOrPanic('S4_USER_ID')
-    const tokenid = getOrPanic('S4_TOKEN_ID')
-    baseUrl = getOrPanic('S4_BASE_URL')
+    const uid = getEnvOrPanic('S4_USER_ID')
+    const tokenid = getEnvOrPanic('S4_TOKEN_ID')
 
+    baseUrl = getEnvOrPanic('S4_BASE_URL')
     rawParams = {
       uid,
       tokenid,
