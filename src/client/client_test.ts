@@ -8,10 +8,10 @@ Deno.test('build the correct endpoints', () => {
   const tokenId = 'qwerty'
   const baseUrl = 'https://www.example.com/baz'
 
-  const client = new Client({ paths: ['foo', 'bar'] })
+  const client = new Client()
 
-  assertEquals(client.baseEndpoints, {
-    foo: `${baseUrl}/foo.php?uid=${userId}&tokenid=${tokenId}&format=json`,
-    bar: `${baseUrl}/bar.php?uid=${userId}&tokenid=${tokenId}&format=json`,
+  assertEquals(client, {
+    baseUrl,
+    baseSearchParams: `uid=${userId}&tokenid=${tokenId}&format=json&`,
   })
 })

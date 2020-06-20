@@ -6,6 +6,6 @@ scripts:
       DENO_ENV: test
   l:
     desc: Run cli
-    cmd: deno run --allow-read --allow-env src/lang.ts
+    cmd: deno run --allow-read --allow-env --allow-net src/lang.ts
     env:
       DENO_ENV: dev

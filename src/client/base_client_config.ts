@@ -23,11 +23,11 @@ export function runBaseClientConfig() {
       format: 'json',
     }
   } catch (error) {
-    console.log(error.message)
+    console.error(error.message)
     Deno.exit(1)
   }
 
-  const baseSearchParams = new URLSearchParams(rawParams).toString()
+  const baseSearchParams = `${new URLSearchParams(rawParams).toString()}&`
 
   return { baseUrl, baseSearchParams }
 }

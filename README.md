@@ -1,5 +1,5 @@
 ## Install
 
 ```sh
-$ deno install --allow-read --allow-env https://raw.githubusercontent.com/bernardini687/lang/master/src/lang.ts
+$ deno install -f --allow-read --allow-env --allow-net https://raw.githubusercontent.com/bernardini687/lang/master/src/lang.ts
 ```
