@@ -1,5 +1,3 @@
-import { runConfig } from './config.ts'
-
 function getEnvOrPanic(key: string) {
   const result = Deno.env.get(key)
 
@@ -11,8 +9,6 @@ function getEnvOrPanic(key: string) {
 }
 
 export function runBaseClientConfig() {
-  runConfig()
-
   let rawParams: Record<string, string>
   let baseUrl: string
 
